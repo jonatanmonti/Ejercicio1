@@ -25,7 +25,7 @@ namespace Ejercicio1
 			set { items = value; }
 		}
 
-		public void Calcular()
+		public void CalcularSubtotal()
 		{
 			for (int n = 0; n < Items.Count; n++)
 			{

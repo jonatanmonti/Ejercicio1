@@ -24,10 +24,23 @@ namespace Ejercicio1
 			set { ventas = value; }
 		}
 
-		public void Calcular()
+		private float recaudacion;
+
+		public float Recaudacion
 		{
+			get { return recaudacion; }
+			set { recaudacion = value; }
+		}
 
-
+		public void CalcularRecaudacion()
+		{
+			recaudacion = 0;
+			for (int n = 0; n < ventas.Count; n++)
+			{
+				ventas[n].CalcularSubtotal();
+				recaudacion += ventas[n].Subtotal;
+			}
+						
 
 		}
 
