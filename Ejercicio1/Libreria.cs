@@ -27,6 +27,8 @@ namespace Ejercicio1
 		public void Calcular()
 		{
 
+
+
 		}
 
 	}
