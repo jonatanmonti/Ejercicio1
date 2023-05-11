@@ -25,9 +25,15 @@ namespace Ejercicio1
 			set { articulo = value; }
 		}
 
-		public float calcular()
+		public float CalcularItemTotal()
 		{
 			return Cant * articulo.Precio;
+		}
+
+		public string desc
+		{
+			get { return articulo.Nombre + "$" + (cant * articulo.Precio).ToString(); }
+			
 		}
 
 	}
