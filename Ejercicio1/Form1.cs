@@ -12,9 +12,21 @@ namespace Ejercicio1
 {
     public partial class Form1 : Form
     {
+
+        public List<Libreria> lib = new List<Libreria> ();
+        public Producto p = new Producto ();
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void buttonCalcular_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBoxCB.Text) && !string.IsNullOrWhiteSpace(textBoxNombre.Text) && !string.IsNullOrWhiteSpace(textBoxDescripcion.Text) && !string.IsNullOrWhiteSpace(this.maskedTextBoxPrecio.Text))
+            {
+
+            }
         }
     }
 }
