@@ -31,7 +31,8 @@ namespace Ejercicio1
 			for (int n = 0; n < Items.Count; n++)
 			{
 				subtotal += Items[n].CalcularItemTotal(); /*calculamos el subtotal multiplicando la cantidad de items
-			}												por la propiedad CalcularItemTotal de la clase ItemVenta*/
+				                                           * por la propiedad CalcularItemTotal de la clase ItemVenta*/
+            }												
 		}
 
 	}
