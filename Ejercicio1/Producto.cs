@@ -8,6 +8,8 @@ namespace Ejercicio1
     public class Producto
     {
 
+		//declaramos nuestras propiedades cb, nombre, descripcion, precio.
+
 		private string cb;
 
 		public string CB
