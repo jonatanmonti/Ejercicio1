@@ -36,6 +36,7 @@ namespace Ejercicio1
 
 		public string desc
 		{
+			//aca me devuelve en la lista de articulos el nombre y al lado el precio
 			get { return articulo.Nombre + "$" + (cant * articulo.Precio).ToString(); }
 			
 		}

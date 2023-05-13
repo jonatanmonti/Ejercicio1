@@ -47,5 +47,40 @@ namespace Ejercicio1
                 
             }
         }
+
+        private void buttonFinalizarVenta_Click(object sender, EventArgs e)
+        {
+            if (VentaActual != null && VentaActual.Items.Count > 0)
+            {
+                Lib.Ventas.Add(VentaActual);
+                VentaActual = null;
+            }
+
+            Lib.CalcularRecaudacion();
+            labelTotal.Text = "Total: " + Lib.Recaudacion.ToString();
+        }
+
+        private void buttonIniciarVenta_Click_1(object sender, EventArgs e)
+        {
+            VentaActual = new Venta();
+        }
+
+        private void buttonCant_Click_1(object sender, EventArgs e)
+        {
+            if (VentaActual != null)
+            {
+                ItemVenta item = new ItemVenta();
+
+                item.Cant = int.Parse(maskedTextBoxCantidad.Text);
+                item.Articulo = (Producto)ListBoxProducto.SelectedItem;
+                VentaActual.Items.Add(item);
+                VentaActual.CalcularSubtotal();
+                labelSubtotal.Text = "Subtotal: " + VentaActual.Subtotal.ToString();
+
+                listBoxArticulos.DataSource = null;
+                listBoxArticulos.DataSource = VentaActual.Items;
+                listBoxArticulos.DisplayMember = "desc";
+            }
+        }
     }
 }
