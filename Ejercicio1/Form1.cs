@@ -16,7 +16,7 @@ namespace Ejercicio1
     {
 
         //creamos un objeto libreria del tipo libreria
-        public Libreria lib = new Libreria();
+        public Libreria Lib = new Libreria();
         //creamos un objeto VentaActual del tipo Venta el cual le asignamos valor null
         private Venta VentaActual = null;
 
@@ -38,8 +38,13 @@ namespace Ejercicio1
                 p.Descripcion = textBoxDescripcion.Text;
                 p.Precio = float.Parse(maskedTextBoxPrecio.Text);
 
+                Lib.Productos.Add(p);
+
                 ListBoxProducto.DataSource = null;
-                ListBoxProducto.DataSource = p;
+                ListBoxProducto.DataSource = Lib.Productos;
+
+                ListBoxProducto.DisplayMember = "Nombre";
+                
             }
         }
     }
