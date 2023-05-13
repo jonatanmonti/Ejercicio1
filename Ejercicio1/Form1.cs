@@ -33,15 +33,15 @@ namespace Ejercicio1
             {
                 Producto p = new Producto();
 
-                p.CB = textBoxCB.Text;
-                p.Nombre = textBoxNombre.Text;
-                p.Descripcion = textBoxDescripcion.Text;
-                p.Precio = float.Parse(maskedTextBoxPrecio.Text);
+                p.CB = textBoxCB.Text; //cargamos el codigo de barra
+                p.Nombre = textBoxNombre.Text; //cargamos el nombre
+                p.Descripcion = textBoxDescripcion.Text; //cargamos la descripcion
+                p.Precio = float.Parse(maskedTextBoxPrecio.Text); //cargamos el precio
 
-                Lib.Productos.Add(p);
+                Lib.Productos.Add(p); //agregamos productos a nuestra list
 
-                ListBoxProducto.DataSource = null;
-                ListBoxProducto.DataSource = Lib.Productos;
+                ListBoxProducto.DataSource = null; //null para que refresque la lista
+                ListBoxProducto.DataSource = Lib.Productos; //agregamos los productos al listbox
 
                 ListBoxProducto.DisplayMember = "Nombre";
                 
