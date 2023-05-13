@@ -39,7 +39,7 @@
             this.labelDescripcion = new System.Windows.Forms.Label();
             this.labelPrecio = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonCalcular = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,7 +127,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.buttonCalcular);
+            this.groupBox1.Controls.Add(this.buttonAdd);
             this.groupBox1.Controls.Add(this.textBoxDescripcion);
             this.groupBox1.Controls.Add(this.labelPrecio);
             this.groupBox1.Controls.Add(this.textBoxCB);
@@ -143,15 +143,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Products";
             // 
-            // buttonCalcular
+            // buttonAdd
             // 
-            this.buttonCalcular.Location = new System.Drawing.Point(178, 149);
-            this.buttonCalcular.Name = "buttonCalcular";
-            this.buttonCalcular.Size = new System.Drawing.Size(100, 37);
-            this.buttonCalcular.TabIndex = 11;
-            this.buttonCalcular.Text = "Calculate";
-            this.buttonCalcular.UseVisualStyleBackColor = true;
-            this.buttonCalcular.Click += new System.EventHandler(this.buttonCalcular_Click);
+            this.buttonAdd.Location = new System.Drawing.Point(178, 149);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(100, 37);
+            this.buttonAdd.TabIndex = 11;
+            this.buttonAdd.Text = "add";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // Form1
             // 
@@ -182,7 +182,7 @@
         private System.Windows.Forms.Label labelDescripcion;
         private System.Windows.Forms.Label labelPrecio;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonCalcular;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }
 
