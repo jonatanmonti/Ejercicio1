@@ -50,36 +50,38 @@ namespace Ejercicio1
 
         private void buttonFinalizarVenta_Click(object sender, EventArgs e)
         {
-            if (VentaActual != null && VentaActual.Items.Count > 0)
+            if (VentaActual != null && VentaActual.Items.Count > 0) //validamos que inicio la venta para no tener errores
             {
-                Lib.Ventas.Add(VentaActual);
-                VentaActual = null;
+                Lib.Ventas.Add(VentaActual); //agregamos nuestra lista d eventa a nuestra libreria
+                VentaActual = null; //marcamos que la venta es null para indicar que cerramos la venta
+
+                Lib.CalcularRecaudacion(); //calculamos la recaudacion total
+                labelTotal.Text = "Total: " + Lib.Recaudacion.ToString(); //la mostramos reemplazando el texto de nuestro label
             }
 
-            Lib.CalcularRecaudacion();
-            labelTotal.Text = "Total: " + Lib.Recaudacion.ToString();
+            
         }
 
         private void buttonIniciarVenta_Click_1(object sender, EventArgs e)
         {
-            VentaActual = new Venta();
+            VentaActual = new Venta(); //inicializamos la venta
         }
 
         private void buttonCant_Click_1(object sender, EventArgs e)
         {
             if (VentaActual != null)
             {
-                ItemVenta item = new ItemVenta();
+                ItemVenta item = new ItemVenta(); //creamos nuestro objeto item
 
-                item.Cant = int.Parse(maskedTextBoxCantidad.Text);
-                item.Articulo = (Producto)ListBoxProducto.SelectedItem;
-                VentaActual.Items.Add(item);
-                VentaActual.CalcularSubtotal();
-                labelSubtotal.Text = "Subtotal: " + VentaActual.Subtotal.ToString();
+                item.Cant = int.Parse(maskedTextBoxCantidad.Text); //guardamos la cantidad en nuestro objeto item
+                item.Articulo = (Producto)ListBoxProducto.SelectedItem; //le indicamos que el articulo es el que esta seleccionado en la lista de productos
+                VentaActual.Items.Add(item); //agregamos el item dentro de nuestra lista de items
+                VentaActual.CalcularSubtotal(); //se calcula el subtotal de los items
+                labelSubtotal.Text = "Subtotal: " + VentaActual.Subtotal.ToString(); //cambiamos el texto del label por el valor del subtotal
 
-                listBoxArticulos.DataSource = null;
-                listBoxArticulos.DataSource = VentaActual.Items;
-                listBoxArticulos.DisplayMember = "desc";
+                listBoxArticulos.DataSource = null; //se refresca la lista
+                listBoxArticulos.DataSource = VentaActual.Items; //agregamos a la lista de articulos (el carrito), los productos con su total calculado
+                listBoxArticulos.DisplayMember = "desc";    //mostramos en pantalla la informacion correcta
             }
         }
     }
